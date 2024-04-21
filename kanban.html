@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>칸반 보드</title>
+        <link rel="stylesheet" href="/css/kanban.css" />
+    </head>
+    <body>
+        <div class="board">
+            <form id="todo-form">
+                <input type="text" placeholder="새 할일" id="todo-input" />
+                <button type="submit" class="add">추가 +</button>
+            </form>
+
+            <div class="lanes">
+                <div class="swim-lane" id="todo">
+                    <h3 class="heading">목표</h3>
+                    <div class="todoList taskList">
+                        <!-- 아래 p태그는 사라지지 않는 값-->
+                        <!-- 추가하려면 그대로 복붙해서 텍스트 값만 바꾸기 -->
+                        <p draggable="false" class="fixed">할 일1</p>
+                    </div>
+                </div>
+
+                <div class="swim-lane" id="doing">
+                    <h3 class="heading">진행중</h3>
+                    <div class="doingList taskList">
+                        <!-- 아래 p태그는 사라지지 않는 값-->
+                        <p draggable="false" class="fixed">할 일2</p>
+                    </div>
+                </div>
+
+                <div class="swim-lane" id="complete">
+                    <h3 class="heading">완료</h3>
+                    <div class="completeList taskList">
+                        <!-- 아래 p태그는 사라지지 않는 값-->
+                        <p draggable="false" class="fixed">할 일3</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="/js/drag.js" defer></script>
+        <script src="/js/kanban.js" defer></script>
+    </body>
+</html>

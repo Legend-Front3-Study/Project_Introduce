@@ -1,0 +1,18 @@
+#bg {
+    background-image: url("/images/back3.png");
+    background-size: contain; /* 이미지가 잘리지 않고 전체가 보이도록 설정 */
+    background-position: center center; /* 이미지를 요소의 중앙에 위치 */
+    background-repeat: no-repeat; /* 이미지 반복 없음 */
+    position: relative;
+    height: 100vh; /* 추가: 뷰포트의 전체 높이로 설정 */
+    width: 100vw; /* 추가: 뷰포트의 전체 너비로 설정 */
+}
+
+.canvas {
+    transform: translateX(-400px) translateY(190px);
+    cursor: pointer;
+}
+
+#game-title {
+    transform: translateX(750px) translateY(-470px);
+}

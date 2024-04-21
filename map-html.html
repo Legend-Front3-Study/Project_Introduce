@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>GBGH</title>
+
+  <!-- CSS FILES -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;400;700&display=swap" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/bootstrap-icons.css" rel="stylesheet">
+  <link href="css/templatemo-festava-live.css" rel="stylesheet">
+  <!--
+
+TemplateMo 583 Festava Live
+ 
+https://templatemo.com/tm-583-festava-live
+
+-->
+  <script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=2e15eb3eb6fb74d0a9d5b436335bec1c&libraries=services"></script>
+  <style>
+    #map {
+      width: 100%;
+      height: 450px;
+    }
+    /* 맵의 크기를 설정 */
+  </style>
+</head>
+
+<body>
+        <section class="contact-section section-padding" id="section_6">
+            <div class="container">
+                <a href="../Card/index.html">
+                    <img src="/images/back.png" id="backgroundImage" alt="Background">
+                </a>
+                
+                <div class="row">
+                    <!-- 왼쪽 버튼 추가 -->
+                    <div class="col-lg-2 d-flex flex-column align-items-center justify-content-center">
+                        <img src="/images/ball1.png" alt="버튼 1 이미지" class="button-image mb-3" onclick="searchFoodPlaces1();">
+                        <img src="/images/ball2.png" alt="버튼 2 이미지" class="button-image mb-3" onclick="searchFoodPlaces2();">
+                        <img src="/images/ball3.png" alt="버튼 3 이미지" class="button-image mb-3" onclick="searchFoodPlaces3();">
+                        <img src="/images/ball4.png" alt="버튼 4 이미지" class="button-image mb-3" onclick="searchFoodPlaces4();">
+                    </div>
+                    <!-- 중앙 내용 -->
+                    <div class="col-lg-8 mx-auto">
+
+                        <div id="searchBox" class="text-center"> <!-- text-center 클래스 추가 -->
+                            <img src="/images/title.png" class="h1-title-center" id="first-title" onclick="resetMap();">
+                            <div id="restaurant">
+                            <img src="/images/pi.png" class="button-images mb-3">
+                            <img src="/images/restaurant.png" class="h1-title-center">
+                            </div>
+                            <div id="cafe">
+                                <img src="/images/ggo.png" class="button-images mb-3">
+                                <img src="/images/cafe.png" class="h1-title-center">
+                            </div>
+                            <div id="mart">
+                                <img src="/images/fire.png" class="button-images mb-3">
+                                <img src="/images/mart.png" class="h1-title-center">
+                            </div>
+                            <div id="subway">
+                                <img src="/images/lee.png" class="button-images mb-3">
+                                <img src="/images/subway.png" class="h1-title-center">
+                            </div>
+                            <p id="searchButton" class="d-flex justify-content-center mb-5">
+                                <input type="text" id="keyword" class="form-control" placeholder="검색어를 입력하세요" style="width: 80%; padding: 10px;">
+                                <button class="btn btn-primary ms-2" onclick="searchPlaces();">검색</button>
+                            </p>
+                        </div>
+                        <div class="tab-content shadow-lg mt-5" id="nav-tabContent">
+                            <div class="tab-pane fade show active" id="nav-ContactMap" role="tabpanel">
+                                <div id="map" style="width: 100%; height: 500px;"></div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+
+  <!-- JAVASCRIPT FILES -->
+  <script src="js/map.js"></script>
+</body>
+
+</html>
