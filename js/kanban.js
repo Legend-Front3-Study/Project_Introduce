@@ -1,98 +1,93 @@
-const input = document.querySelector("#todo-input");
-const form = document.querySelector("#todo-form");
-const todoList = document.querySelector(".todoList");
-const taskList = document.querySelectorAll(".taskList");
-const add = document.querySelector(".add");
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.querySelector("#todo-form");
+    const input = document.querySelector("#todo-input");
+    const todoList = document.querySelector(".todoList");
+    const taskLists = document.querySelectorAll(".taskList");
 
-// 할일 추가 버튼 클릭
-add.addEventListener("click", (e) => {
-    e.preventDefault();
-    if (input.value !== "") {
-        createPTag(input.value, todoList);
-        input.value = "";
-        updateToDo();
-    } else {
-        input.setAttribute("placeholder", "할 일을 입력해주세요.");
-    }
-});
-
-// 목록 삭제 기능(현재 할일만 가능)
-taskList.forEach((task) => {
-    task.addEventListener("dblclick", (e) => {
-        if (e.target.classList.contains("fixed")) {
-            alert("삭제 하실 수 없습니다.");
+    // 폼 제출 이벤트 처리
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        if (input.value.trim() !== "") {
+            createTaskElement(input.value, todoList, true, "task-todo"); // 드래그 가능하도록 추가
+            input.value = "";
+            updateToDo(); // 로컬 스토리지 업데이트
         } else {
-            const check = confirm(e.target.innerText + " 를 지우시겠습니까?");
-            if (check) {
-                if (e.target.classList.contains("task")) {
-                    e.target.remove();
-                    updateToDo();
-                }
-            }
+            input.setAttribute("placeholder", "할 일을 입력해주세요.");
         }
     });
 
-    task.addEventListener("input", (e) => {
-        updateToDo();
-    });
-});
-
-// localhost 값 HTML 생성 기능
-function displayTasks() {
-    const todoAll = document.querySelectorAll(".taskList");
-    for (let value1 of todoAll) {
-        const storageObj = JSON.parse(
-            localStorage.getItem(value1.classList[0])
-        );
-        if (storageObj !== null) {
-            for (let value of storageObj) {
-                createPTag(value.content, value1);
-            }
-        }
-    }
-}
-
-window.onload = displayTasks;
-
-// p태그 생성해주는 함수
-function createPTag(value, parent) {
-    const newTaskElement = document.createElement("p");
-    newTaskElement.setAttribute("draggable", "true");
-    newTaskElement.setAttribute("class", "task");
-    newTaskElement.setAttribute("contenteditable", "true");
-    newTaskElement.innerText = value;
-    newTaskElement.addEventListener("dragstart", () => {
-        newTaskElement.classList.add("is-dragging");
-    });
-
-    newTaskElement.addEventListener("dragend", () => {
-        newTaskElement.classList.remove("is-dragging");
-    });
-
-    parent.appendChild(newTaskElement);
-}
-
-// HTML 값 localStorage에 업데이트
-function updateToDo() {
-    const todoAll = document.querySelectorAll(".taskList");
-    for (let value of todoAll) {
-        const todo = value.querySelectorAll(".task");
-        const array = [];
-        todo.forEach((task, index) => {
-            const updateObj = {
-                id: index,
-                content: task.innerText,
-            };
-            array.push(updateObj);
+    // 각 항목의 드래그 이벤트 추가
+    function addDragEvents(task) {
+        task.addEventListener("dragstart", () => {
+            task.classList.add("is-dragging");
         });
-
-        localStorage.setItem(value.classList[0], JSON.stringify(array));
+        task.addEventListener("dragend", () => {
+            task.classList.remove("is-dragging");
+            updateToDo(); // 드래그 종료 후 로컬 스토리지 업데이트
+        });
     }
-}
 
-taskList.forEach((task) => {
-    task.addEventListener("blur", (e) => {
-        console.log("zzz");
-        updateToDo();
-    });
+    // 로컬 스토리지 업데이트 함수
+    function updateToDo() {
+        taskLists.forEach((list) => {
+            const updatedTasks = [];
+            list.querySelectorAll(".task").forEach((task) => {
+                updatedTasks.push({
+                    content: task.textContent.replace("X", "").trim(),
+                });
+            });
+            localStorage.setItem(list.className, JSON.stringify(updatedTasks));
+        });
+    }
+
+    // 항목 생성 함수
+    function createTaskElement(value, parent, draggable, additionalClass) {
+        const newTaskElement = document.createElement("p");
+        newTaskElement.className = `task ${additionalClass}`;
+        newTaskElement.setAttribute("draggable", "true");
+
+        const textSpan = document.createElement("span");
+        textSpan.textContent = value;
+        newTaskElement.appendChild(textSpan);
+
+        const deleteBtn = document.createElement("button");
+        deleteBtn.textContent = "X";
+        deleteBtn.className = "delete-btn";
+        deleteBtn.onclick = function () {
+            if (confirm("이 항목을 삭제하시겠습니까?")) {
+                newTaskElement.remove();
+                updateToDo(); // 로컬 스토리지에서도 삭제 후 업데이트
+            }
+        };
+        newTaskElement.appendChild(deleteBtn);
+
+        if (draggable) {
+            addDragEvents(newTaskElement);
+        }
+
+        parent.appendChild(newTaskElement);
+    }
+
+    // 페이지 로드 시 로컬 스토리지에서 할 일 항목 로드
+    window.onload = function () {
+        taskLists.forEach((list) => {
+            const tasks = JSON.parse(localStorage.getItem(list.className));
+            if (tasks) {
+                tasks.forEach((task) => {
+                    let additionalClass = "task-todo";
+                    if (list.classList.contains("doingList")) {
+                        additionalClass = "task-doing";
+                    } else if (list.classList.contains("completeList")) {
+                        additionalClass = "task-done";
+                    }
+                    createTaskElement(
+                        task.content,
+                        list,
+                        true,
+                        additionalClass
+                    );
+                });
+            }
+        });
+    };
 });
