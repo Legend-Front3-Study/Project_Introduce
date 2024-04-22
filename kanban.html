@@ -1,39 +1,43 @@
 <!DOCTYPE html>
 <html lang="ko">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>칸반 보드</title>
-        <link rel="stylesheet" href="/css/kanban.css" />
-    </head>
-    <body>
-        <div class="board">
-            <form class="todo-form" id="todo-form">
-                <input type="text" placeholder="새 할일" id="todo-input" />
-                <button type="submit" class="add">추가 +</button>
-            </form>
-            <div class="lanes">
-                <div class="swim-lane" id="todo">
-                    <h3 class="heading">To Do</h3>
-                    <div class="todoList taskList">
-                        <p draggable="false" class="fixed">오늘의 할일!</p>
-                    </div>
-                </div>
-                <div class="swim-lane" id="doing">
-                    <h3 class="heading">Doing</h3>
-                    <div class="doingList taskList">
-                        <p draggable="false" class="fixed">진행중~</p>
-                    </div>
-                </div>
-                <div class="swim-lane" id="complete">
-                    <h3 class="heading">Done</h3>
-                    <div class="completeList taskList">
-                        <p draggable="false" class="fixed">완료!</p>
-                    </div>
-                </div>
-            </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kanban Board</title>
+  <link rel="stylesheet" href="/css/kanban.css" />
+  <link rel="icon" href="../images/favicon_pokeball.png" />
+</head>
+
+<body>
+  <div class="board">
+    <form class="todo-form" id="todo-form">
+      <input type="text" placeholder="새 할일" id="todo-input" />
+      <button type="submit" class="add">추가 +</button>
+    </form>
+    <div class="lanes">
+      <div class="swim-lane" id="todo">
+        <h3 class="heading">To Do</h3>
+        <div class="todoList taskList">
+          <p draggable="false" class="fixed">오늘의 할일!</p>
         </div>
-        <script src="/js/drag.js" defer></script>
-        <script src="/js/kanban.js" defer></script>
-    </body>
+      </div>
+      <div class="swim-lane" id="doing">
+        <h3 class="heading">Doing</h3>
+        <div class="doingList taskList">
+          <p draggable="false" class="fixed">진행중~</p>
+        </div>
+      </div>
+      <div class="swim-lane" id="complete">
+        <h3 class="heading">Done</h3>
+        <div class="completeList taskList">
+          <p draggable="false" class="fixed">완료!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="/js/drag.js" defer></script>
+  <script src="/js/kanban.js" defer></script>
+</body>
+
 </html>
