@@ -1,35 +1,63 @@
-var container = document.getElementById("map");
-var options = {
-    center: new kakao.maps.LatLng(37.582336, 127.001844),
-    level: 3,
-};
-var map = new kakao.maps.Map(container, options);
+var map,
+    ps,
+    infowindow,
+    imageSrc,
+    imageSize,
+    imageOption,
+    markers = [];
 
-var ps = new kakao.maps.services.Places();
+function initMap() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+            function (position) {
+                var currentPosition = new kakao.maps.LatLng(
+                    position.coords.latitude,
+                    position.coords.longitude
+                );
 
-var infowindow = new kakao.maps.InfoWindow({ zIndex: 1 });
+                var container = document.getElementById("map");
+                var options = {
+                    center: currentPosition,
+                    level: 3,
+                };
+                map = new kakao.maps.Map(container, options);
 
-var imageSrc = "/images/pngwing.png",
-    imageSize = new kakao.maps.Size(64, 69),
-    imageOption = { offset: new kakao.maps.Point(27, 69) };
+                ps = new kakao.maps.services.Places();
+                infowindow = new kakao.maps.InfoWindow({ zIndex: 1 });
+                imageSrc = "/images/pngwing.png";
+                imageSize = new kakao.maps.Size(64, 69);
+                imageOption = { offset: new kakao.maps.Point(27, 69) };
 
-var initialPosition = new kakao.maps.LatLng(37.582336, 127.001844);
-var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption);
-var initialMarker = new kakao.maps.Marker({
-    map: map,
-    position: initialPosition,
-    image: markerImage,
-});
+                var markerImage = new kakao.maps.MarkerImage(
+                    imageSrc,
+                    imageSize,
+                    imageOption
+                );
+                var initialMarker = new kakao.maps.Marker({
+                    map: map,
+                    position: currentPosition,
+                    image: markerImage,
+                });
 
-// 초기 마커에 대한 인포윈도우 설정
-kakao.maps.event.addListener(initialMarker, "click", function () {
-    var content =
-        '<div style="padding:5px;">' +
-        '<a href="https://place.map.kakao.com/27206049" target="_blank" style="font-size:12px; text-decoration:none;">' +
-        "한성대학교에듀센터<br>카카오맵에서 보기</a></div>";
-    infowindow.setContent(content);
-    infowindow.open(map, initialMarker);
-});
+                kakao.maps.event.addListener(
+                    initialMarker,
+                    "click",
+                    function () {
+                        var content =
+                            '<div style="padding:5px;"><a href="https://place.map.kakao.com/27206049" target="_blank" style="font-size:12px; text-decoration:none;">한성대학교에듀센터<br>카카오맵에서 보기</a></div>';
+                        infowindow.setContent(content);
+                        infowindow.open(map, initialMarker);
+                    }
+                );
+            },
+            function (error) {
+                console.error("Geolocation error:", error);
+            }
+        );
+    } else {
+        alert("이 브라우저에서는 Geolocation이 지원되지 않습니다.");
+    }
+}
 
 function searchPlaces() {
     var keyword = document.getElementById("keyword").value;
@@ -39,16 +67,14 @@ function searchPlaces() {
         return;
     }
 
-    ps.keywordSearch(keyword, placesSearchCB);
+    ps.keywordSearch(keyword, placesSearchCB, { location: map.getCenter() });
     document.getElementById("keyword").value = "";
 }
 
-var markers = [];
-
 function removeAllMarkers() {
-    for (var i = 0; i < markers.length; i++) {
-        markers[i].setMap(null);
-    }
+    markers.forEach(function (marker) {
+        marker.setMap(null);
+    });
     markers = [];
 }
 
@@ -57,10 +83,10 @@ function placesSearchCB(data, status, pagination) {
         removeAllMarkers();
         var bounds = new kakao.maps.LatLngBounds();
 
-        for (var i = 0; i < data.length; i++) {
-            displayMarker(data[i]);
-            bounds.extend(new kakao.maps.LatLng(data[i].y, data[i].x));
-        }
+        data.forEach(function (place) {
+            displayMarker(place);
+            bounds.extend(new kakao.maps.LatLng(place.y, place.x));
+        });
 
         map.setBounds(bounds);
     } else if (status === kakao.maps.services.Status.ZERO_RESULT) {
@@ -78,7 +104,6 @@ function displayMarker(place) {
     });
 
     kakao.maps.event.addListener(marker, "click", function () {
-        // 카카오맵 링크 생성
         var mapLink =
             "https://map.kakao.com/link/map/" +
             encodeURIComponent(place.place_name) +
@@ -86,13 +111,13 @@ function displayMarker(place) {
             place.y +
             "," +
             place.x;
-        infowindow.setContent(
+        var content =
             '<div style="padding:5px;"><a href="' +
-                mapLink +
-                '" target="_blank" style="font-size:12px; text-decoration:none;">' +
-                place.place_name +
-                "<br>카카오맵에서 보기</a></div>"
-        );
+            mapLink +
+            '" target="_blank" style="font-size:12px; text-decoration:none;">' +
+            place.place_name +
+            "<br>카카오맵에서 보기</a></div>";
+        infowindow.setContent(content);
         infowindow.open(map, marker);
     });
 
@@ -100,29 +125,27 @@ function displayMarker(place) {
 }
 
 function toggleAndSearch(category, sectionId) {
-    var weAreHereText = document.querySelector(".h1-title-center");
+    var weAreHereText = document.querySelector("#first-title");
     var allSections = document.querySelectorAll("#searchBox > div");
 
     weAreHereText.style.opacity = "0";
     weAreHereText.style.visibility = "hidden";
 
     allSections.forEach(function (section) {
-        if (section.id === sectionId) {
-            section.style.display = "flex";
-            section.style.opacity = "1";
-            section.style.visibility = "visible";
-        } else {
-            section.style.display = "none";
-            section.style.opacity = "0";
-            section.style.visibility = "hidden";
-        }
+        section.style.display = section.id === sectionId ? "flex" : "none";
+        section.style.opacity = section.id === sectionId ? "1" : "0";
+        section.style.visibility =
+            section.id === sectionId ? "visible" : "hidden";
     });
 
+    var searchBox = document.getElementById("searchButton");
+    searchBox.style.display = "flex";
+    searchBox.style.opacity = "1";
+    searchBox.style.visibility = "visible";
+
     removeAllMarkers();
-    var position = new kakao.maps.LatLng(37.582336, 127.001844);
-    map.setCenter(position);
     ps.categorySearch(category, placesSearchCB, {
-        location: position,
+        location: map.getCenter(),
         useMapBounds: true,
     });
 }
@@ -130,20 +153,24 @@ function toggleAndSearch(category, sectionId) {
 function searchFoodPlaces1() {
     toggleAndSearch("FD6", "restaurant");
 }
-
 function searchFoodPlaces2() {
     toggleAndSearch("CE7", "cafe");
 }
-
 function searchFoodPlaces3() {
     toggleAndSearch("CS2", "mart");
 }
-
 function searchFoodPlaces4() {
     toggleAndSearch("SW8", "subway");
 }
 
 function resetMap() {
     removeAllMarkers();
-    map.setCenter(new kakao.maps.LatLng(37.582336, 127.001844));
+    map.setCenter(
+        new kakao.maps.LatLng(
+            map.getCenter().getLat(),
+            map.getCenter().getLng()
+        )
+    );
 }
+
+initMap(); // 지도 초기화
