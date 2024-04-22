@@ -164,7 +164,7 @@ body {
     pointer-events: auto;
 }
 .progress-area .song-timer {
-    margin-top: 2px;
+    margin-top: 5px;
 }
 .song-timer span {
     font-size: 13px;
