@@ -214,6 +214,10 @@ strong {
     padding-bottom: 100px;
 }
 
+.section-paddings {
+    height: 100%;
+}
+
 .section-bg {
     background-color: var(--section-bg-color);
 }
@@ -546,6 +550,13 @@ strong {
     background-size: cover;
     position: relative;
     padding-top: 130px;
+}
+
+.ticket-sections {
+    background-image: url("../images/nicholas-green-unsplash-blur.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
 }
 
 .ticket-form {

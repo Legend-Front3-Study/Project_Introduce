@@ -93,7 +93,7 @@ function redirectToUserPage(userName) {
     const userPages = {
         안수현: "ahn.html",
         변현진: "byun.html",
-        정승수: "jeong.html",
+        정승수: "jung.html",
         구태호: "koo.html",
     };
 

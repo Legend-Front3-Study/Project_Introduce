@@ -51,7 +51,7 @@
             #backgroundImages {
                 width: 5%; /* 이미지의 크기를 원본의 25%로 줄임 */
                 position: absolute; /* 절대 위치 지정 */
-                transform: translateX(20px) translateY(-120px);
+                transform: translateX(30px) translateY(10px);
                 cursor: pointer;
             }
         </style>
@@ -59,7 +59,7 @@
     <body>
         <main class="main-content">
             <!-- 내용 -->
-            <section class="ticket-section section-padding" id="login">
+            <section class="ticket-sections section-paddings" id="login">
                 <a href="../Card/index.html">
                     <img
                         src="/images/back.png"
@@ -80,7 +80,6 @@
                                 <div class="ticket-form-body">
                                     <div class="row">
                                         <div class="col-lg-6 col-md-6 col-12">
-                                            <p>이름</p>
                                             <input
                                                 type="text"
                                                 name="login-form-name"
@@ -92,7 +91,6 @@
                                         </div>
 
                                         <div class="col-lg-6 col-md-6 col-12">
-                                            <p>이메일</p>
                                             <input
                                                 type="email"
                                                 name="login-form-email"
@@ -107,7 +105,6 @@
 
                                     <div class="row">
                                         <div class="col-lg-6 col-md-6 col-12">
-                                            <p>아이디</p>
                                             <input
                                                 type="text"
                                                 name="login-user-id"
@@ -117,7 +114,6 @@
                                             />
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-12">
-                                            <p>비밀번호</p>
                                             <input
                                                 type="password"
                                                 name="login-user-pwd"
@@ -128,7 +124,6 @@
                                         </div>
                                     </div>
 
-                                    <p>전화번호</p>
                                     <input
                                         type="tel"
                                         class="form-control"
@@ -140,7 +135,6 @@
                                     />
 
                                     <div class="row">
-                                        <p>성별</p>
                                         <div class="col-lg-6 col-md-6 col-12">
                                             <div
                                                 class="form-check form-control"
@@ -182,7 +176,7 @@
                                             <label
                                                 for="zipp_btn"
                                                 class="form-label"
-                                                >주소</label
+                                            ></label
                                             ><br />
                                             <input
                                                 type="text"
@@ -227,11 +221,10 @@
                                     </div>
 
                                     <div class="row">
-                                        <p>생년월일</p>
                                         <div class="col-lg-4 col-md-4 col-12">
-                                            <label for="userBirthdayYear"
-                                                >년도</label
-                                            >
+                                            <label
+                                                for="userBirthdayYear"
+                                            ></label>
                                             <select
                                                 id="userBirthdayYear"
                                                 name="birthdayYear"
@@ -242,30 +235,28 @@
                                         </div>
 
                                         <div class="col-lg-4 col-md-4 col-12">
-                                            <label for="userBirthdayMonth"
-                                                >월</label
-                                            >
+                                            <label
+                                                for="userBirthdayMonth"
+                                            ></label>
                                             <select
                                                 id="userBirthdayMonth"
                                                 name="birthdayMonth"
                                                 class="form-control"
                                             >
                                                 <option value="">월</option>
-                                                <!-- 자바스크립트를 사용해 옵션 추가 -->
                                             </select>
                                         </div>
 
                                         <div class="col-lg-4 col-md-4 col-12">
-                                            <label for="userBirthdayDay"
-                                                >일</label
-                                            >
+                                            <label
+                                                for="userBirthdayDay"
+                                            ></label>
                                             <select
                                                 id="userBirthdayDay"
                                                 name="birthdayDay"
                                                 class="form-control"
                                             >
                                                 <option value="">일</option>
-                                                <!-- 자바스크립트를 사용해 옵션 추가 -->
                                             </select>
                                         </div>
                                     </div>
