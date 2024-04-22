@@ -1,62 +1,63 @@
 <!DOCTYPE html>
 <html lang="ko">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>GBGH</title>
-        <!-- CSS FILES -->
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;400;700&display=swap"
-            rel="stylesheet"
-        />
-        <link href="css/bootstrap.min.css" rel="stylesheet" />
-        <link href="css/bootstrap-icons.css" rel="stylesheet" />
-        <link href="css/templatemo-festava-live.css" rel="stylesheet" />
-    </head>
-    <body>
-        <section class="contact-section" id="section_7">
-            <div class="containers">
-                <img src="/images/card.png" class="card-image" />
-                <img src="/images/card.png" class="card-image" />
-                <img src="/images/card.png" class="card-image" />
-                <img src="/images/card.png" class="card-image" />
-            </div>
-        </section>
-        <script>
-            var cardImages = document.querySelectorAll(".card-image");
-            cardImages.forEach(function (card) {
-                const overlay = document.createElement("div");
-                overlay.className = "overlay";
-                card.parentNode.insertBefore(overlay, card.nextSibling);
 
-                card.addEventListener("mousemove", function (e) {
-                    const rect = card.getBoundingClientRect();
-                    overlay.style.width = `${rect.width}px`;
-                    overlay.style.height = `${rect.height}px`;
-                    overlay.style.left = `${
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="../images/favicon_pokeball.png" />
+  <title>Introduce GBGH</title>
+  <!-- CSS FILES -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;400;700&display=swap" rel="stylesheet" />
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <link href="css/bootstrap-icons.css" rel="stylesheet" />
+  <link href="css/templatemo-festava-live.css" rel="stylesheet" />
+</head>
+
+<body>
+  <section class="contact-section" id="section_7">
+    <div class="containers">
+      <img src="/images/card.png" class="card-image" />
+      <img src="/images/card.png" class="card-image" />
+      <img src="/images/card.png" class="card-image" />
+      <img src="/images/card.png" class="card-image" />
+    </div>
+  </section>
+  <script>
+    var cardImages = document.querySelectorAll(".card-image");
+    cardImages.forEach(function(card) {
+      const overlay = document.createElement("div");
+      overlay.className = "overlay";
+      card.parentNode.insertBefore(overlay, card.nextSibling);
+
+      card.addEventListener("mousemove", function(e) {
+        const rect = card.getBoundingClientRect();
+        overlay.style.width = `${rect.width}px`;
+        overlay.style.height = `${rect.height}px`;
+        overlay.style.left = `${
                         e.pageX - window.scrollX - rect.width
                     }px`;
-                    overlay.style.top = `${
+        overlay.style.top = `${
                         e.pageY - window.scrollY - rect.height
                     }px`;
-                    overlay.style.opacity = 1;
-                    overlay.style.backgroundPosition = `${
+        overlay.style.opacity = 1;
+        overlay.style.backgroundPosition = `${
                         e.offsetX - rect.width / 2
                     }px ${e.offsetY - rect.height / 2}px`;
 
-                    var rotateX = (4 / 30) * e.offsetY - 20;
-                    var rotateY = (-1 / 5) * e.offsetX + 20;
-                    card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-                });
+        var rotateX = (4 / 30) * e.offsetY - 20;
+        var rotateY = (-1 / 5) * e.offsetX + 20;
+        card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+      });
 
-                card.addEventListener("mouseout", function () {
-                    overlay.style.opacity = 0;
-                    card.style.transform =
-                        "perspective(350px) rotateY(0deg) rotateX(0deg)";
-                });
-            });
-        </script>
-    </body>
+      card.addEventListener("mouseout", function() {
+        overlay.style.opacity = 0;
+        card.style.transform =
+          "perspective(350px) rotateY(0deg) rotateX(0deg)";
+      });
+    });
+  </script>
+</body>
+
 </html>
