@@ -101,16 +101,19 @@
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-.task-todo {
+.todoList > p {
     background: #e0f7fa; /* 아주 연한 하늘색 */
+    height: 45px;
 }
 
-.task-doing {
+.doingList > p {
     background: #ffcdd2; /* 아주 연한 빨간색 */
+    height: 45px;
 }
 
-.task-done {
+.completeList > p {
     background: #c8e6c9; /* 아주 연한 초록색 */
+    height: 45px;
 }
 
 .delete-btn {

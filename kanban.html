@@ -7,37 +7,45 @@
   <title>Kanban Board</title>
   <link rel="stylesheet" href="/css/kanban.css" />
   <link rel="icon" href="../images/favicon_pokeball.png" />
+  <script src="/js/drag.js" defer></script>
+  <script src="/js/kanban.js" defer></script>
 </head>
 
 <body>
   <div class="board">
     <form class="todo-form" id="todo-form">
       <input type="text" placeholder="새 할일" id="todo-input" />
-      <button type="submit" class="add">추가 +</button>
+      <button type="submit" class="add">추가 + </button>
     </form>
+
     <div class="lanes">
       <div class="swim-lane" id="todo">
-        <h3 class="heading">To Do</h3>
+        <h3 class="heading">목표</h3>
         <div class="todoList taskList">
-          <p draggable="false" class="fixed">오늘의 할일!</p>
+          <!-- 아래 p태그는 사라지지 않는 값-->
+          <!-- 추가하려면 그대로 복붙해서 텍스트 값만 바꾸기 -->
+          <p draggable="false" class="fixed">할 일1</p>
         </div>
       </div>
+
       <div class="swim-lane" id="doing">
-        <h3 class="heading">Doing</h3>
+        <h3 class="heading">진행중</h3>
         <div class="doingList taskList">
-          <p draggable="false" class="fixed">진행중~</p>
+          <!-- 아래 p태그는 사라지지 않는 값-->
+          <p draggable="false" class="fixed">할 일2</p>
         </div>
       </div>
+
       <div class="swim-lane" id="complete">
-        <h3 class="heading">Done</h3>
+        <h3 class="heading">완료</h3>
         <div class="completeList taskList">
-          <p draggable="false" class="fixed">완료!</p>
+          <!-- 아래 p태그는 사라지지 않는 값-->
+          <p draggable="false" class="fixed">할 일3</p>
         </div>
       </div>
     </div>
   </div>
-  <script src="/js/drag.js" defer></script>
-  <script src="/js/kanban.js" defer></script>
+
 </body>
 
 </html>
