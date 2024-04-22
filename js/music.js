@@ -162,11 +162,11 @@ mainAudio.addEventListener("ended", () => {
 // 음악 재생 리스트에 아이콘
 moreMusicBtn.addEventListener("click", () => {
     musicList.classList.toggle("show");
-    wrapper.style.width = "1400px";
+    wrapper.style.width = "1200px";
     purin.style.display = "none";
 
     if (!musicList.classList.contains("show")) {
-        wrapper.style.width = "750px";
+        wrapper.style.width = "650px";
         purin.style.display = "block";
     }
 });
