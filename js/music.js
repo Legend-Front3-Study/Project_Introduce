@@ -12,6 +12,10 @@ const wrapper = document.querySelector(".wrapper"),
     moreMusicBtn = wrapper.querySelector("#more-music"),
     purin = document.querySelector(".purin");
 closemoreMusic = musicList.querySelector("#close");
+volume = document.querySelector("#volume");
+recent_volume = document.querySelector("#volume");
+volume_show = document.querySelector("#volume_show");
+track = document.createElement("audio");
 
 let musicIndex = Math.floor(Math.random() * allMusic.length + 1);
 isMusicPaused = true;
@@ -233,4 +237,15 @@ function clicked(element) {
     loadMusic(musicIndex);
     playMusic();
     playingSong();
+}
+
+function volume_change() {
+    // volume_show.innerText = recent_volume.value;
+    mainAudio.volume = recent_volume.value / 100;
+}
+
+function mute_sound() {
+    mainAudio.volume = 0;
+    volume.value = 0;
+    // volume_show.innerText = 0;
 }

@@ -42,35 +42,3 @@ const insertAboveTask = (zone, mouseY) => {
 
     return closestTask;
 };
-
-document.addEventListener("dragover", (event) => {
-    event.preventDefault(); // 드래그 중에 발생하는 이벤트의 기본 동작을 방지
-});
-
-document.addEventListener("drop", (event) => {
-    event.preventDefault();
-    const draggingElement = document.querySelector(".is-dragging");
-    const dropZone = event.target.closest(".swim-lane");
-
-    if (draggingElement && dropZone) {
-        const div = dropZone.querySelector(".taskList");
-        div.appendChild(draggingElement);
-        updateTaskStyle(draggingElement, dropZone.id);
-        updateToDo();
-    }
-});
-
-function updateTaskStyle(task, zoneId) {
-    task.className = "task"; // 기존 클래스 초기화
-    switch (zoneId) {
-        case "todo":
-            task.classList.add("task-todo");
-            break;
-        case "doing":
-            task.classList.add("task-doing");
-            break;
-        case "complete":
-            task.classList.add("task-done");
-            break;
-    }
-}

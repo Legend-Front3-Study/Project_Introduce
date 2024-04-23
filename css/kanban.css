@@ -114,17 +114,21 @@
 
 .todoList > p {
     background: #e0f7fa; /* 아주 연한 하늘색 */
-    height: 45px;
+    font-size: 20px;
+    height: 60px;
+    /* height: 45px; */
 }
 
 .doingList > p {
     background: #ffcdd2; /* 아주 연한 빨간색 */
-    height: 45px;
+    font-size: 20px;
+    height: 60px;
 }
 
 .completeList > p {
     background: #c8e6c9; /* 아주 연한 초록색 */
-    height: 45px;
+    font-size: 20px;
+    height: 60px;
 }
 
 .delete-btn {
@@ -136,4 +140,11 @@
     color: red;
     display: inline;
     vertical-align: middle;
+}
+
+.is-dragging {
+    scale: 1.05;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
+    background: rgb(50, 50, 50);
+    color: rgb(0, 0, 0);
 }
