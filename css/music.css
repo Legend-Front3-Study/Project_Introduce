@@ -19,6 +19,17 @@
     --pinkshadow: #ffcbdd;
     --lightbshadow: rgba(0, 0, 0, 0.15);
 }
+
+#backgroundImages {
+    width: 75px;
+    /* 이미지의 크기를 원본의 25%로 줄임 */
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    /* 절대 위치 지정 */
+    /* transform: translateX(-920px) translateY(25px); */
+    cursor: pointer;
+}
 body {
     display: flex;
     align-items: center;

@@ -9,6 +9,17 @@
     display: none;
 }
 
+#backgroundImages {
+    width: 75px;
+    /* 이미지의 크기를 원본의 25%로 줄임 */
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    /* 절대 위치 지정 */
+    /* transform: translateX(-920px) translateY(25px); */
+    cursor: pointer;
+}
+
 .board {
     display: flex;
     flex-direction: column;
@@ -101,16 +112,19 @@
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-.task-todo {
+.todoList > p {
     background: #e0f7fa; /* 아주 연한 하늘색 */
+    height: 45px;
 }
 
-.task-doing {
+.doingList > p {
     background: #ffcdd2; /* 아주 연한 빨간색 */
+    height: 45px;
 }
 
-.task-done {
+.completeList > p {
     background: #c8e6c9; /* 아주 연한 초록색 */
+    height: 45px;
 }
 
 .delete-btn {

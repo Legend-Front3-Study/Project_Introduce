@@ -15,6 +15,18 @@
         <link href="css/bootstrap.min.css" rel="stylesheet" />
         <link href="css/bootstrap-icons.css" rel="stylesheet" />
         <link href="css/templatemo-festava-live.css" rel="stylesheet" />
+        <style>
+            #backgroundImages {
+                width: 75px;
+                /* 이미지의 크기를 원본의 25%로 줄임 */
+                position: absolute;
+                top: 50px;
+                left: 50px;
+                /* 절대 위치 지정 */
+                /* transform: translateX(-920px) translateY(25px); */
+                cursor: pointer;
+            }
+        </style>
     </head>
 
     <body>
@@ -77,24 +89,6 @@
                 .getElementById("koo-image")
                 .addEventListener("click", function () {
                     window.location.href = "koo.html";
-                });
-
-            document
-                .getElementById("jung-image")
-                .addEventListener("click", function () {
-                    window.location.href = "jung.html";
-                });
-
-            document
-                .getElementById("byun-image")
-                .addEventListener("click", function () {
-                    window.location.href = "byun.html";
-                });
-
-            document
-                .getElementById("ahan-image")
-                .addEventListener("click", function () {
-                    window.location.href = "ahan.html";
                 });
         </script>
     </body>
