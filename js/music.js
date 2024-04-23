@@ -240,12 +240,12 @@ function clicked(element) {
 }
 
 function volume_change() {
-    volume_show.innerText = recent_volume.value;
-    track.volume = recent_volume.value / 100;
+    // volume_show.innerText = recent_volume.value;
+    mainAudio.volume = recent_volume.value / 100;
 }
 
 function mute_sound() {
-    track.volume = 0;
+    mainAudio.volume = 0;
     volume.value = 0;
-    volume_show.innerText = 0;
+    // volume_show.innerText = 0;
 }

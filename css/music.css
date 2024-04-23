@@ -340,20 +340,32 @@ ul li.playing {
     backdrop-filter: blur(6.5px);
 }
 
-#volumeinput {
-    -webkit-appearance: none;
-    width: 50%;
-    outline: none;
-    height: 2px;
-    margin: 0 15px;
-    background-color: ffffffa4;
+.volume {
+    height: 15px;
+    margin-left: 220px;
+    margin-top: 10px;
+    width: 450px;
+    border-radius: 50px;
+    /* background: #ffffffa4; */
+    /* background: white; */
+    /* cursor: pointer; */
 }
 
-#volumeinput::-webkit-slider-thumb {
+#volume {
+    position: relative;
+    -webkit-appearance: none;
+    width: 30%;
+    outline: none;
+    height: 5px;
+    margin: 0 15px;
+    background-color: #ffffffa4;
+}
+
+#volume::-webkit-slider-thumb {
     -webkit-appearance: none;
     height: 20px;
     width: 20px;
     border-radius: 50%;
-    background: #ff8a65;
+    background: linear-gradient(-225deg, #5271c4 0%, #b19fff 48%, #eca1fe 100%);
     cursor: pointer;
 }
