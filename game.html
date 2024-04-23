@@ -1,21 +1,37 @@
 <html lang="ko">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Psyduck Java</title>
-        <link href="css/css.css" rel="stylesheet" />
-        <link rel="icon" href="../images/favicon_pokeball.png" />
-        <style></style>
-    </head>
 
-    <body>
-        <div id="bg">
-            <a href="../Card/index.html">
-                <img src="images/game-title.png" id="game-title" />
-            </a>
-            <canvas class="canvas" width="800" height="600"></canvas>
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Psyduck Java</title>
+  <link href="css/css.css" rel="stylesheet" />
+  <link rel="icon" href="../images/favicon_pokeball.png" />
+  <style>
+    #backgroundImages {
+      width: 75px;
+      /* 이미지의 크기를 원본의 25%로 줄임 */
+      position: absolute;
+      top: 50px;
+      left: 50px;
+      /* 절대 위치 지정 */
+      /* transform: translateX(-920px) translateY(25px); */
+      cursor: pointer;
+    }
+  </style>
+</head>
 
-        <script src="js/dynamicimage.js"></script>
-    </body>
+<body>
+  <div id="bg">
+    <a href="../Card/index.html">
+      <img src="/images/back.png" id="backgroundImages" alt="Background" />
+    </a>
+    <a href="../Card/index.html">
+      <img src="images/game-title.png" id="game-title" />
+    </a>
+    <canvas class="canvas" width="800" height="600"></canvas>
+  </div>
+
+  <script src="js/dynamicimage.js"></script>
+</body>
+
 </html>

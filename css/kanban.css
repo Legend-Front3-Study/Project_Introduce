@@ -9,6 +9,17 @@
     display: none;
 }
 
+#backgroundImages {
+    width: 75px;
+    /* 이미지의 크기를 원본의 25%로 줄임 */
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    /* 절대 위치 지정 */
+    /* transform: translateX(-920px) translateY(25px); */
+    cursor: pointer;
+}
+
 .board {
     display: flex;
     flex-direction: column;
