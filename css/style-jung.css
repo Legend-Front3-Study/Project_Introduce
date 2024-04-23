@@ -1550,6 +1550,5 @@ footer .credits a {
 #pokeball2,
 #pokeball3,
 #pokeball4 {
-    transition: 100ms;
     cursor: pointer;
 }

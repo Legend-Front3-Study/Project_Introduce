@@ -85,8 +85,7 @@ document.getElementById("pokeball4").addEventListener("click", function () {
     increaseSize(); // 함수 호출
 
     setTimeout(() => {
-        this.src =
-            "https://cdn.discordapp.com/attachments/1051894462491656192/1232121600183238696/game.png?ex=66284e29&is=6626fca9&hm=c673e073bd4749b8f3d784be93a1bb6477d0f80eab076d585269079ebe58c3db&";
+        this.src = "/images/hyosung.png";
     }, 1000);
 });
 

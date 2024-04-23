@@ -25,7 +25,7 @@ document.getElementById("pokeball2").addEventListener("click", function () {
 
     function increaseSize() {
         let currentSize = parseInt(getComputedStyle(pokeball2).width); // 현재 이미지 크기
-        const targetSize = 160; // 목표 이미지 크기
+        const targetSize = 150; // 목표 이미지 크기
         const increment = 2; // 크기 증가량
 
         if (currentSize < targetSize) {
