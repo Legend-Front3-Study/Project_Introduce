@@ -10,7 +10,7 @@ let checkLoose = true;
 let retryImo;
 
 const parentWidth = canvas.parentElement.clientWidth; // 부모 요소의 너비를 가져옵니다.
-const desiredWidth = parentWidth * 0.7; // 부모 요소의 너비의 75%를 계산합니다.
+const desiredWidth = parentWidth * 0.95; // 부모 요소의 너비의 75%를 계산합니다.
 canvas.width = desiredWidth;
 
 const img = new Image();
@@ -40,7 +40,7 @@ life.src = "/images/life.png";
 const retry = new Image();
 retry.src = "/images/잠만보(re).png";
 
-let oX = canvas.width * 0.5 - 225;
+let oX = canvas.width * 0.5;
 let oY = canvas.height * 0.5 - 225;
 
 let wX = canvas.width * 0.9 + 50;
