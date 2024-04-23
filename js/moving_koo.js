@@ -17,7 +17,7 @@ document.getElementById("pokeball1").addEventListener("click", function () {
 
     setTimeout(() => {
         this.src = "/images/isfj.png";
-    }, 2000);
+    }, 1000);
 });
 
 document.getElementById("pokeball2").addEventListener("click", function () {
@@ -39,7 +39,7 @@ document.getElementById("pokeball2").addEventListener("click", function () {
 
     setTimeout(() => {
         this.src = "/images/fullstack.png";
-    }, 2000);
+    }, 1000);
 });
 
 document.getElementById("pokeball3").addEventListener("click", function () {
@@ -61,7 +61,7 @@ document.getElementById("pokeball3").addEventListener("click", function () {
 
     setTimeout(() => {
         this.src = "/images/spring boot react.png";
-    }, 2000);
+    }, 1000);
 });
 
 document.getElementById("pokeball4").addEventListener("click", function () {
@@ -83,7 +83,7 @@ document.getElementById("pokeball4").addEventListener("click", function () {
 
     setTimeout(() => {
         this.src = "/images/hyosung.png";
-    }, 2000);
+    }, 1000);
 });
 
 runningObject = document.querySelector("#running");

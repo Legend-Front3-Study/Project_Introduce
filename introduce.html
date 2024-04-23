@@ -20,12 +20,25 @@
     <body>
         <section class="contact-section" id="section_7">
             <div class="containers">
-                <img src="/images/ahan.png" class="card-image" />
-                <img src="/images/byun.png" class="card-image" />
-                <img src="/images/jung.png" class="card-image" />
+                <img
+                    src="/images/ahan.png"
+                    class="card-image"
+                    id="ahan-image"
+                />
+                <img
+                    src="/images/byun.png"
+                    class="card-image"
+                    id="byun-image"
+                />
+                <img
+                    src="/images/jung.png"
+                    class="card-image"
+                    id="jung-image"
+                />
                 <img src="/images/koo.png" class="card-image" id="koo-image" />
             </div>
         </section>
+        s
         <script>
             var cardImages = document.querySelectorAll(".card-image");
             cardImages.forEach(function (card) {
@@ -64,6 +77,24 @@
                 .getElementById("koo-image")
                 .addEventListener("click", function () {
                     window.location.href = "koo.html";
+                });
+
+            document
+                .getElementById("jung-image")
+                .addEventListener("click", function () {
+                    window.location.href = "jung.html";
+                });
+
+            document
+                .getElementById("byun-image")
+                .addEventListener("click", function () {
+                    window.location.href = "byun.html";
+                });
+
+            document
+                .getElementById("ahan-image")
+                .addEventListener("click", function () {
+                    window.location.href = "ahan.html";
                 });
         </script>
     </body>

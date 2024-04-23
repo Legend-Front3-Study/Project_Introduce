@@ -83,11 +83,11 @@ function updateLocalStorageIfChanged(key, newValue) {
 }
 
 // 성별 라디오 버튼 값 저장
-document.querySelectorAll('input[name="Gender"]').forEach((radio) => {
-    radio.addEventListener("change", (event) => {
-        updateLocalStorageIfChanged("Gender", event.target.id); // value 대신 id 값 저장
-    });
-});
+// document.querySelectorAll('input[name="Gender"]').forEach((radio) => {
+//     radio.addEventListener("change", (event) => {
+//         updateLocalStorageIfChanged("Gender", event.target.id); // value 대신 id 값 저장
+//     });
+// });
 
 function redirectToUserPage(userName) {
     const userPages = {
@@ -161,20 +161,20 @@ function populateBirthdaySelectors() {
     // 초기 일 선택 항목 채우기
     updateDays();
 
-    // 년도, 월, 일 선택 시 로컬 스토리지에 값 저장
-    yearSelect.addEventListener("change", (event) => {
-        localStorage.setItem("userBirthdayYear", event.target.value);
-        updateDays(); // 일 선택 항목 업데이트
-    });
+    // // 년도, 월, 일 선택 시 로컬 스토리지에 값 저장
+    // yearSelect.addEventListener("change", (event) => {
+    //     localStorage.setItem("userBirthdayYear", event.target.value);
+    //     updateDays(); // 일 선택 항목 업데이트
+    // });
 
-    monthSelect.addEventListener("change", (event) => {
-        localStorage.setItem("userBirthdayMonth", event.target.value);
-        updateDays(); // 일 선택 항목 업데이트
-    });
+    // monthSelect.addEventListener("change", (event) => {
+    //     localStorage.setItem("userBirthdayMonth", event.target.value);
+    //     updateDays(); // 일 선택 항목 업데이트
+    // });
 
-    daySelect.addEventListener("change", (event) => {
-        localStorage.setItem("userBirthdayDay", event.target.value);
-    });
+    // daySelect.addEventListener("change", (event) => {
+    //     localStorage.setItem("userBirthdayDay", event.target.value);
+    // });
 }
 
 // 폼 제출 이벤트 처리

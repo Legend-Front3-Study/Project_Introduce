@@ -1,303 +1,334 @@
 <!DOCTYPE html>
-<html lang="ko">
-<style type="text/css">
-  @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap");
+<html lang="en">
+    <style type="text/css">
+        @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap");
 
-  body {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-image: linear-gradient(60deg, #abecd6 0%, #fbed96 100%);
-    font-family: "Noto Sans KR", sans-serif;
-    cursor: url(http://www.rw-designer.com/cursor-extern.php?id=22252);
-  }
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-image: linear-gradient(60deg, #abecd6 0%, #fbed96 100%);
+            font-family: "Noto Sans KR", sans-serif;
+            cursor: url(http://www.rw-designer.com/cursor-extern.php?id=22252);
+        }
 
-  .black-rectangle {
-    margin-top: 30px;
-    width: 1200px;
-    height: 260px;
-    background-color: rgb(209, 209, 209);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-  }
+        .black-rectangle {
+            margin-top: 30px;
+            width: 1200px;
+            height: 260px;
+            background-color: rgb(209, 209, 209);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
 
-  .board-text {
-    color: rgb(0, 0, 0);
-    font-size: 32px;
-    font-weight: bold;
-  }
+        .board-text {
+            color: rgb(0, 0, 0);
+            font-size: 32px;
+            font-weight: bold;
+        }
 
-  .black-rectangle img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+        .black-rectangle img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
-  .container {
-    margin-top: 20px;
-    width: 1200px;
-    display: flex;
-    justify-content: space-between;
-  }
+        .container {
+            margin-top: 20px;
+            width: 1200px;
+            display: flex;
+            justify-content: space-between;
+        }
 
-  .div_style2 {
-    width: 880px;
-    height: 1000px;
-    background-color: rgb(255, 255, 255);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 20px;
-    border-radius: 10px;
-  }
+        .div_style2 {
+            width: 880px;
+            height: 700px;
+            background-color: rgb(255, 255, 255);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 20px;
+            border-radius: 10px;
+        }
 
-  .div_style2 img {
-    max-width: 80%;
-    max-height: 400px;
-    object-fit: contain;
-    margin-bottom: 15px;
-  }
+        .div_style2 img {
+            max-width: 80%;
+            max-height: 400px;
+            object-fit: contain;
+            margin: 0 auto 15px;
+        }
 
-  .div_style3 {
-    width: 300px;
-    height: 700px;
-    background-color: rgb(255, 255, 255);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    border-radius: 10px;
-  }
+        .div_style3 {
+            width: 300px;
+            height: 700px;
+            background-color: rgb(255, 255, 255);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            border-radius: 10px;
+        }
 
-  .div_style3 img {
-    position: absolute;
-    top: 20%;
-    transform: translateY(-50%);
-    border-radius: 50%;
-  }
+        .div_style3 img {
+            position: absolute;
+            top: 20%;
+            transform: translateY(-50%);
+            border-radius: 50%;
+        }
 
-  .profile-info {
-    margin-top: 220px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: "Noto Sans KR", sans-serif;
-  }
+        .profile-info {
+            margin-top: 220px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: "Noto Sans KR", sans-serif;
+        }
 
-  .profile-info .username {
-    font-size: 24px;
-    font-weight: bold;
-    margin-top: 24px;
-    margin-bottom: 10px;
-    color: #333;
-  }
+        .profile-info .username {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 24px;
+            margin-bottom: 10px;
+            color: #333;
+        }
 
-  .profile-info .user-details {
-    display: inline-block;
-    text-align: center;
-    background-color: #c9ecbd;
-    color: #ffffff;
-    font-size: 15px;
-    border-radius: 10px;
-    padding: 5px 10px;
-    margin: 5px;
-  }
+        .profile-info .user-details {
+            display: inline-block;
+            text-align: center;
+            background-color: #c9ecbd;
+            color: #ffffff;
+            font-size: 15px;
+            border-radius: 10px;
+            padding: 5px 10px;
+            margin: 5px;
+        }
 
-  .button-container {
-    width: 220px;
-    height: 50px;
-    background-color: #abecd6;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
+        .button-container {
+            width: 220px;
+            height: 50px;
+            background-color: #abecd6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
 
-  .button-container button {
-    font-family: "Noto Sans KR", sans-serif;
-    color: white;
-    background-color: transparent;
-    border: none;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-  }
+        .button-container button {
+            font-family: "Noto Sans KR", sans-serif;
+            color: white;
+            background-color: transparent;
+            border: none;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
 
-  .category-buttons {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
-    font-weight: bold;
-  }
+        .category-buttons {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+            font-weight: bold;
+        }
 
-  .category-buttons button {
-    width: 220px;
-    height: 50px;
-    background-color: #abecd6;
-    color: white;
-    border: none;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
+        .category-buttons button {
+            width: 220px;
+            height: 50px;
+            background-color: #abecd6;
+            color: white;
+            border: none;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
 
-  .post-list {
-    margin-top: 20px;
-    width: 100%;
-    padding: 0 20px;
-    position: relative;
-  }
+        .post-list {
+            margin-top: 20px;
+            width: 100%;
+            padding: 0 20px;
+            position: relative;
+        }
 
-  .post-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 0;
-    margin-left: 20px;
-    margin-right: 20px;
-  }
+        .post-list table {
+            width: 100%;
+            border-collapse: collapse;
+            border-spacing: 0 15px;
+        }
 
-  .post-item span {
-    font-weight: bold;
-  }
+        .post-list tr {
+            background-color: #fff; /* 행 배경색을 흰색으로 설정 */
+        }
 
-  .post-item .post-category {
-    width: 5%;
-    text-align: center;
-    background-color: #abecd6;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 12px;
-    margin-right: 20px;
-    margin-left: 10px;
-  }
+        .post-list td {
+            padding: 10px 0;
+            text-align: center;
+            font-weight: bold;
+        }
 
-  .post-item .post-title {
-    width: 60%;
-    font-size: 18px;
-  }
+        .post-list .post-category {
+            background-color: #abecd6;
+            color: white;
+            /* padding: 5px 10px; */
+            border-radius: 10%;
+            width: 6%;
+            text-align: center;
+            margin: 20px;
+        }
 
-  .post-item .post-author {
-    width: 15%;
-    text-align: center;
-    color: #888;
-  }
+        .post-list .post-title {
+            padding-left: 15px;
+            text-align: left;
+            /* margin-left: 20px; */
+            font-size: 18px;
+            width: 60%;
+        }
 
-  .post-item .post-date {
-    width: 15%;
-    text-align: center;
-    color: #888;
-  }
+        .post-list .post-author,
+        .post-list .post-date {
+            color: #888;
+            width: 12%;
+        }
 
-  .post-item .post-views {
-    width: 10%;
-    text-align: center;
-    color: #888;
-  }
+        .post-list .post-views {
+            color: #888;
+            width: 8%;
+        }
 
-  #backgroundImages {
-    width: 3%;
-    /* 이미지의 크기를 원본의 25%로 줄임 */
-    position: absolute;
-    /* 절대 위치 지정 */
-    transform: translateX(-920px) translateY(25px);
-    cursor: pointer;
-  }
-</style>
+        #backgroundImages {
+            width: 3%; /* 이미지의 크기를 원본의 25%로 줄임 */
+            position: absolute; /* 절대 위치 지정 */
+            transform: translateX(-920px) translateY(25px);
+            cursor: pointer;
+        }
 
-<head>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet" />
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Board</title>
-  <link rel="icon" href="../images/favicon_pokeball.png" />
-</head>
+        .p-post-list {
+            padding: 15px;
+        }
+    </style>
 
-<body>
-  <a href="../Card/index.html">
-    <img src="/images/back.png" id="backgroundImages" alt="Background" />
-  </a>
-  <div class="black-rectangle">
-    <img src="https://huimin-static.oss-cn-hangzhou.aliyuncs.com/hm/981bd3e8b7b7fb93c6cf7850e677c8cb.gif" alt="GIF 이미지" />
-    <h1 class="board-text">C A F E</h1>
-  </div>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap"
+            rel="stylesheet"
+        />
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
 
-  <div class="container">
-    <div class="div_style3">
-      <img src="https://64.media.tumblr.com/c2c5ccd1854065134127795e6a1edaf7/tumblr_nnne81Vigx1qfjr5zo1_540.gif" alt="이미지" width="200" height="200" />
-      <div class="profile-info">
-        <span class="username">USER</span>
-        <div>
-          <span class="user-details"> 방문 163회 </span>
-          <span class="user-details">내가 쓴 게시글 21개 </span>
+    <body>
+        <a href="../Card/index.html">
+            <img
+                src="/images/back.png"
+                id="backgroundImages"
+                alt="Background"
+            />
+        </a>
+        <div class="black-rectangle">
+            <img
+                src="https://huimin-static.oss-cn-hangzhou.aliyuncs.com/hm/981bd3e8b7b7fb93c6cf7850e677c8cb.gif"
+                alt="GIF 이미지"
+            />
+            <h1 class="board-text">C A F E</h1>
         </div>
-        <div>
-          <span class="user-details"> 내가 쓴 댓글 0개</span>
-          <span class="user-details"> 내 커뮤니티 보기 </span>
-        </div>
-      </div>
-      <div class="button-container">
-        <button>카페 글쓰기</button>
-      </div>
-      <div class="category-buttons">
-        <button>공지</button>
-        <button>후기</button>
-        <button onclick="window.open('https://victory-soo.notion.site/3-GBGH-e19acda360a64867966dca29e2751ceb?pvs=4', '_blank')">
-          팀 노션
-        </button>
-      </div>
-    </div>
-    <div class="div_style2">
-      <img src="images/pke.png" alt="이미지" />
-      <div class="post-list">
-        <div class="post-item">
-          <span class="post-category">후기</span>
-          <span class="post-title">후기 작성란입니다.</span>
-          <span class="post-author">구태호</span>
-          <span class="post-date">2024.04.01.</span>
-          <span class="post-views">39</span>
-        </div>
-        <div class="post-item">
-          <span class="post-category">후기</span>
-          <span class="post-title"> 후기 작성란입니다.</span>
-          <span class="post-author">안수현</span>
-          <span class="post-date">2024.03.28.</span>
-          <span class="post-views">28</span>
-        </div>
-        <div class="post-item">
-          <span class="post-category">후기</span>
-          <span class="post-title"> 후기 작성란입니다. </span>
-          <span class="post-author">변현진</span>
-          <span class="post-date">2024.03.11.</span>
-          <span class="post-views">147</span>
-        </div>
-        <div class="post-item">
-          <span class="post-category">후기</span>
-          <span class="post-title"> 후기 작성란입니다.</span>
-          <span class="post-author">정승수</span>
-          <span class="post-date">2024.04.27.</span>
-          <span class="post-views">960</span>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <script src="js/board.js"></script>
-</body>
+        <div class="container">
+            <div class="div_style3">
+                <img
+                    src="https://64.media.tumblr.com/c2c5ccd1854065134127795e6a1edaf7/tumblr_nnne81Vigx1qfjr5zo1_540.gif"
+                    alt="이미지"
+                    width="200"
+                    height="200"
+                />
+                <div class="profile-info">
+                    <span class="username">USER</span>
+                    <div>
+                        <span class="user-details"> 방문 163회 </span>
+                        <span class="user-details">내가 쓴 게시글 21개 </span>
+                    </div>
+                    <div>
+                        <span class="user-details"> 내가 쓴 댓글 0개</span>
+                        <span class="user-details"> 내 커뮤니티 보기 </span>
+                    </div>
+                </div>
+                <div class="button-container">
+                    <button>카페 글쓰기</button>
+                </div>
+                <div class="category-buttons">
+                    <button>공지</button>
+                    <button>후기</button>
+                    <button
+                        onclick="window.open('https://victory-soo.notion.site/3-GBGH-e19acda360a64867966dca29e2751ceb?pvs=4', '_blank')"
+                    >
+                        팀 노션
+                    </button>
+                </div>
+            </div>
+            <div class="div_style2">
+                <div class="post-list">
+                    <div class="p-post-list">
+                        <table>
+                            <tr>
+                                <td class="post-category">후기</td>
+                                <td class="post-title">후기 작성란입니다.</td>
+                                <td class="post-author">구태호</td>
+                                <td class="post-date">2024.04.01.</td>
+                                <td class="post-views">39</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="post-category">후기</td>
+                                <td class="post-title">후기 작성란입니다.</td>
+                                <td class="post-author">안수현</td>
+                                <td class="post-date">2024.03.28.</td>
+                                <td class="post-views">28</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="post-category">후기</td>
+                                <td class="post-title">후기 작성란입니다.</td>
+                                <td class="post-author">변현진</td>
+                                <td class="post-date">2024.03.11.</td>
+                                <td class="post-views">147</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="post-category">후기</td>
+                                <td class="post-title">후기 작성란입니다.</td>
+                                <td class="post-author">정승수</td>
+                                <td class="post-date">2024.04.27.</td>
+                                <td class="post-views">960</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <img
+                    src="https://64.media.tumblr.com/4e483f9829ba371579a5ef0b8e49dac0/94fc837aab5e0557-4c/s1280x1920/9ea87ce98223cf7b88ee3c72b5c832d0669fa927.gif"
+                    alt="이미지"
+                />
+            </div>
+        </div>
 
+        <script src="js/board.js"></script>
+    </body>
 </html>

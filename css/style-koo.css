@@ -158,6 +158,18 @@ a:hover {
     font-size: 1.1rem;
 }
 
+.title-ss {
+    font-weight: 600;
+    color: #1e1e1e;
+    font-size: 1.5rem;
+}
+
+.title-sss {
+    font-weight: 600;
+    color: #1e1e1e;
+    font-size: 2rem;
+}
+
 /*--/ Title A /--*/
 .title-box {
     margin-bottom: 4rem;
@@ -184,7 +196,7 @@ a:hover {
 
 /*--/ Title Left /--*/
 .title-box-2 {
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 
 .title-left {
@@ -893,10 +905,6 @@ a:hover {
 
 .about-mf .about-img {
     margin-bottom: 2rem;
-}
-
-.about-mf .about-img img {
-    margin-left: 35px;
 }
 
 @media (min-width: 767px) {
