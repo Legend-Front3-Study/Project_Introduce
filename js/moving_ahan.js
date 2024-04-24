@@ -17,7 +17,7 @@ document.getElementById("pokeball1").addEventListener("click", function () {
 
     setTimeout(() => {
         this.src =
-            "https://cdn.discordapp.com/attachments/1051894462491656192/1232112311674732654/ESTJ.png?ex=66284582&is=6626f402&hm=7fcf61a69815c58ff93e7a990648678a7bd69a84413dc4a513ba0dccc13cf1f4&";
+            "https://media.discordapp.net/attachments/1051894462491656192/1232112311674732654/ESTJ.png?ex=66299702&is=66284582&hm=0a747e6967aaf8fe9fb4428a932b77e5b95b1f0f822759865c2b9cedf12ad968&";
     }, 1000);
 });
 
@@ -40,7 +40,7 @@ document.getElementById("pokeball2").addEventListener("click", function () {
 
     setTimeout(() => {
         this.src =
-            "https://cdn.discordapp.com/attachments/1051894462491656192/1232120458321592381/back.png?ex=66284d18&is=6626fb98&hm=2da016f6b0ce3fe589c0a01346861c73ea3540dfac6d9e5dea74c84d7285a3fa&";
+            "https://media.discordapp.net/attachments/1051894462491656192/1232120458321592381/back.png?ex=66299e98&is=66284d18&hm=25f4b889b9c662d18d83a2ca7edc68781ec0a4ac51664146d0197d20eb248d55&";
     }, 1000);
 });
 
@@ -63,7 +63,7 @@ document.getElementById("pokeball3").addEventListener("click", function () {
 
     setTimeout(() => {
         this.src =
-            "https://cdn.discordapp.com/attachments/1051894462491656192/1232120945548988488/python.png?ex=66284d8d&is=6626fc0d&hm=a3b7936ecfc3dd34ba3a97662c79c503b9e22dbd5f2ff84c98e10819d8c38bc0&";
+            "https://media.discordapp.net/attachments/1051894462491656192/1232120945548988488/python.png?ex=66299f0d&is=66284d8d&hm=2c2a9cd2a235e4243e2446fc4f1765518e865611e9b2e1439b6ea87010c68e46&";
     }, 1000);
 });
 
